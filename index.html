@@ -505,12 +505,12 @@ overflow:visible;}
    card language as the Session cards (§2 of the container-rebuild doc).
 ══════════════════════════════════════ */
 .sb-jd-hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;margin-top:-6.5px;padding-right:22px;}
-.sb-jd-hd .sb-home-section-hd{margin-bottom:0;}
+.sb-jd-hd .sb-home-section-hd{margin-bottom:0;flex:1;min-width:0;}
 /* Close button sits in the exact same corner spot as every card's kebab
    (.jtab-fcard2-kebab: absolute, top:5.5px/right:5.5px, 23x23, radius:5,
    #757575 border) — matching the Journey Preview card directly above this
    modal, rather than living inline next to Save. */
-#btn-close-jd-modal,#btn-close-stage-modal{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border-radius:5px;background:transparent;border:1px solid #757575;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-sizing:border-box;}
+#btn-close-jd-modal,#btn-close-stage-modal,#btn-close-music-modal,#btn-close-choosemusic-modal{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border-radius:5px;background:transparent;border:1px solid #757575;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-sizing:border-box;}
 /* Studio tab empty states (§18) — shown in place of a tab's real content
    when nothing is loaded in Studio yet. */
 .sb-empty-state{text-align:center;padding:60px 20px;}
@@ -737,8 +737,8 @@ overflow:visible;}
    same way on an inset:0 absolutely-positioned box as it does in normal
    flow: with left/right both pinned to 0, a negative left/right margin
    still pushes each edge outward by that amount. */
-#sb-jd-modal-overlay,#sb-stage-modal-overlay{position:absolute;inset:0;margin:0 -16px;z-index:60;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-#sb-jd-modal-overlay.open,#sb-stage-modal-overlay.open{display:block;}
+#sb-jd-modal-overlay,#sb-stage-modal-overlay,#sb-music-modal-overlay,#sb-choosemusic-modal-overlay{position:absolute;inset:0;margin:0 -16px;z-index:60;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+#sb-jd-modal-overlay.open,#sb-stage-modal-overlay.open,#sb-music-modal-overlay.open,#sb-choosemusic-modal-overlay.open{display:block;}
 /* Same corner radius + gradient language as every other container in
    Studio (.sb-je-card/.jtab-prow2 etc: 4px radius, the #2F2F2F→#1E1E1E
    gradient) — just at full 100% opacity instead of their usual 90%, per
@@ -803,6 +803,43 @@ overflow:visible;}
 #sb-stage-modal-overlay .sb-jd-hd{margin-top:-10.5px;}
 #sb-stage-modal-overlay .sb-field{margin-bottom:14px;}
 #sb-stage-modal-overlay .sb-steppers{gap:24px;}
+/* Edit Music modal — reuses the Mixing Board's existing fader/meter/mute
+   CSS classes as-is (.mixch-*), just scaled down within this modal
+   specifically (ID-scoped, so the full-screen Mixing Board's own sizing
+   elsewhere is untouched). The vertical fader is a rotated range input —
+   its *width* (pre-rotation) becomes the visual track length post-
+   rotation, so that's the dimension scaled down here, along with the
+   wrap/ticks heights that need to match it. */
+.sbmm-hd-actions{display:flex;gap:8px;flex-shrink:0;}
+.sbmm-basemusic{font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:10px;}
+.sbmm-basemusic-val{color:var(--accent,#a78bfa);}
+#sb-music-modal-overlay .mixch-board{padding:6px 4px 8px;gap:4px;}
+#sb-music-modal-overlay .mixch-col{gap:5px;}
+#sb-music-modal-overlay .mixch-meter{height:30px;}
+#sb-music-modal-overlay .mixch-mute{height:16px;font-size:8px;}
+#sb-music-modal-overlay .mixch-fader-wrap{height:75px;}
+#sb-music-modal-overlay .mixch-fader-vert{width:75px;}
+#sb-music-modal-overlay .mixch-ticks{height:70px;}
+#sb-music-modal-overlay .mixch-val{font-size:8px;}
+#sb-music-modal-overlay .mixch-name{font-size:8px;}
+#sb-music-modal-overlay .mixch-master-row{padding:4px 10px 2px;gap:8px;}
+#sb-music-modal-overlay .mixch-master-meter{height:22px;}
+#sb-music-modal-overlay .mixch-master-label{font-size:9px;}
+/* Choose Music modal — same .jtab-prow2 row component the Library tab's
+   own Music list uses, reused wholesale, plus a small Play button (same
+   slot .jtab-prow2-kebab normally occupies) and a selection border for
+   whichever row is the current staged choice. */
+/* Stays the same full size as the other three modals regardless of how
+   many rows are actually in the list — without this, a short list (few
+   Custom Music remixes) let the card shrink to fit its content, exposing
+   the Edit Stage modal underneath through the gap below it. */
+#sb-choosemusic-modal-overlay .sb-jd-modal{min-height:339px;}
+#sb-choosemusic-modal-overlay .lib-music-subtabs{margin:0 0 10px;border-radius:4px;}
+#sbcm-list{max-height:100%;}
+.sbcm-row.sbcm-selected{border:1px solid var(--accent,#a78bfa);}
+.sbcm-play-btn{position:absolute;top:9.9px;right:5.5px;width:23px;height:23px;border:1px solid #757575;border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-sizing:border-box;color:#fff;}
+.sbcm-play-btn svg{width:9px;height:9px;}
+.sbcm-play-btn.sb-preview-playing{border-color:var(--accent,#a78bfa);color:var(--accent,#a78bfa);}
 .sb-stepper-num{font-family:'PW Digital Numbers',monospace;font-size:26px;font-weight:400;color:#fff;text-align:right;background:transparent;border:none;outline:none;width:64px;padding:0;}
 .sb-stepper-num.sb-input-error{color:#ff6060;}
 .sb-stepper-arrows{display:flex;flex-direction:column;gap:3px;}
@@ -1747,6 +1784,62 @@ overflow:visible;}
                 <button class="sb-je-btn-sm" id="sbm-music-edit-btn">Edit</button>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Edit Music modal — reached from the Edit Stage modal's Stage
+             Music "Edit" button. Same overlay/card pattern as the other two
+             modals above, but a genuinely separate rendering path from the
+             old full-screen Mixing Board (#sb-panel-mix) rather than that
+             screen relocated — #sb-panel-mix is still reachable from several
+             other entry points outside the Journey Editor entirely (Library
+             kebab actions, the Choose Music screen's own Edit Mix), which
+             still need it at full size, so it's untouched. This duplicates
+             its channel-strip rendering (sbRenderMusicModalBody below,
+             vs. sbRenderMixTrayBody) with "mm-" prefixed element ids
+             specifically so the two boards' meters/sliders never collide if
+             both ever exist in the DOM at once — the alternative, sharing
+             ids, would mean whichever board rendered second silently wins
+             every getElementById lookup the meter/slider logic makes,
+             breaking updates to whichever board actually has focus. -->
+        <div id="sb-music-modal-overlay">
+          <div class="sb-jd-modal">
+            <button id="btn-close-music-modal" onclick="sbCloseMusicModal()"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="9" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="1" x2="1" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <div class="sb-jd-hd">
+              <div class="sb-home-section-hd" style="margin-bottom:0;">Edit Music</div>
+              <div class="sbmm-hd-actions">
+                <button class="sb-je-btn-sm" id="sbmm-new-btn">New</button>
+                <button class="sb-je-btn-sm" id="sbmm-save-btn">Save</button>
+              </div>
+            </div>
+            <div class="sbmm-basemusic">Base Music: <span id="sbmm-basemusic-name" class="sbmm-basemusic-val">None</span></div>
+            <div id="sbmm-mixtray-body"></div>
+          </div>
+        </div>
+
+        <!-- Choose Music modal — reached from Edit Music's "New" button.
+             Operates like the Library tab's own Music sub-tab: same
+             Custom/Default toggle, same .jtab-prow2 row component (icon,
+             name, date), same scrollable list — just with a per-row Play
+             button instead of a kebab (auditioning here, not managing the
+             library), and a select-then-Save flow (tap a row to highlight
+             it, Save to actually commit) instead of committing immediately
+             on tap. Committing reuses sbSelectRemixForSongOnly/
+             sbSelectBaseForSongOnly as-is — the exact same "assign this
+             song to the current stage" logic the old Music tab already
+             used, just called from here instead. -->
+        <div id="sb-choosemusic-modal-overlay">
+          <div class="sb-jd-modal">
+            <button id="btn-close-choosemusic-modal" onclick="sbCloseChooseMusicModal()"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="9" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="1" x2="1" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <div class="sb-jd-hd">
+              <div class="sb-home-section-hd" style="margin-bottom:0;">Choose Music</div>
+              <button class="sb-je-btn-sm" id="sbcm-save-btn">Save</button>
+            </div>
+            <div class="lib-music-subtabs" id="sbcm-subtabs">
+              <div class="lib-music-subtab-item active" data-cm-subtab="custom">Custom Music</div>
+              <div class="lib-music-subtab-item" data-cm-subtab="default">Default Music</div>
+            </div>
+            <div id="sbcm-list"></div>
           </div>
         </div>
       </div>
@@ -8965,6 +9058,19 @@ document.querySelectorAll('[data-nav]').forEach(function(el){
       if (studioBg) studioBg.style.display = (studio && studio.style.display !== 'none') ? 'block' : 'none';
     };
     if(infoOpen) closeInfo();
+    // Bug fix: navigating to a different tab and back used to leave any
+    // open Studio Journey Editor modal (Edit Journey Info/Edit Stage/Edit
+    // Music/Choose Music) exactly as it was — this handler only toggles
+    // studio-panel's own display, never touched those — so the *next*
+    // time Studio became visible again (even much later, e.g. starting a
+    // brand new journey), whichever modal was left open was still sitting
+    // there `.open`. Closing them defensively on every nav click, not just
+    // when actually leaving Studio, covers every path that could strand
+    // one open without needing to special-case each nav branch below.
+    if (typeof sbCloseJourneyModal === 'function') sbCloseJourneyModal();
+    if (typeof sbCloseStageModal === 'function') sbCloseStageModal();
+    if (typeof sbCloseMusicModal === 'function') sbCloseMusicModal();
+    if (typeof sbCloseChooseMusicModal === 'function') sbCloseChooseMusicModal();
     // Music and the Mixing Board are pages inside Studio now, not overlay
     // trays — just make sure any preview audio stops and the Mix page
     // (reachable outside the tab bar) isn't left showing when navigating away.
@@ -11273,8 +11379,277 @@ document.getElementById('sbm-stage-name').addEventListener('input', function(){
   sbMarkDirty();
 });
 document.getElementById('sbm-save-btn').addEventListener('click', sbCloseStageModal);
-document.getElementById('sbm-music-edit-btn').addEventListener('click', function(){
-  toast('Music Mix editing coming soon');
+document.getElementById('sbm-music-edit-btn').addEventListener('click', sbOpenMusicModal);
+// ── EDIT MUSIC MODAL ──────────────────────────────────────────────────
+// Reached from the Edit Stage modal's Stage Music "Edit" button. Reuses
+// the Mixing Board's existing per-channel fader logic (staging object,
+// slider math, mute toggling) but renders into its own container with its
+// own "mm-" prefixed element ids — see the HTML comment above this
+// modal's markup for why that's a separate render path rather than the
+// old full-screen board relocated.
+var sbMixMutedPrevMM = {};
+function sbOpenMusicModal(){
+  var s = sbCurrentStage();
+  if (!s || !s.music || !CHORDS[s.music]) { toast('Add a song to this stage first'); return; }
+  var baseKey = s.music;
+  var variant = s.usingRemix ? 'remix' : 'base';
+  var style = CHORDS[baseKey];
+  if (!style) return;
+  var remixKey = sbRemixKey(baseKey, studioDraft.activeStage);
+  var existing = studioDraft.customStyles[remixKey];
+  var seed = (variant === 'remix' && existing) ? existing : sbMixDefaultsFor();
+  sbMixStaging = { baseKey: baseKey, mix: Object.assign({}, seed.mix), musicVolLevel: seed.musicVolLevel !== undefined ? seed.musicVolLevel : 0.5 };
+  sbMixSnapshot = JSON.parse(JSON.stringify(sbMixStaging));
+  sbMixTrayDirty = false;
+  sbRenderMusicModalHeader();
+  sbRenderMusicModalBody();
+  sbApplyAccent();
+  sbPaintSaveMixBtn();
+  // No playback control of its own, deliberately — the Journey Preview
+  // card above (still reachable/clickable; this modal only covers the
+  // scrollable region below it) is what starts/stops audio. Dragging a
+  // fader here pushes straight into that real engine's live layer gains
+  // (applyLayerGain/musicGain, in buildChannel's liveUpdate below) if it's
+  // already playing, so changes are audible without this modal ever
+  // starting anything on its own.
+  document.getElementById('sb-music-modal-overlay').classList.add('open');
+}
+function sbCloseMusicModal(){
+  document.getElementById('sb-music-modal-overlay').classList.remove('open');
+  // Only the lightweight preview engine (unrelated to the real engine the
+  // Journey Preview card's Play button drives) — harmless to stop
+  // defensively even though this modal no longer starts it itself.
+  sbPreviewStop();
+  sbMixStaging = null; sbMixSnapshot = null; sbMixTrayDirty = false;
+}
+function sbRenderMusicModalHeader(){
+  if (!sbMixStaging) return;
+  var baseKey = sbMixStaging.baseKey;
+  var baseStyle = CHORDS[baseKey];
+  var remix = studioDraft.customStyles[sbRemixKey(baseKey, studioDraft.activeStage)];
+  var s = sbCurrentStage();
+  var usingThisRemix = !!remix && s.usingRemix === sbRemixKey(baseKey, studioDraft.activeStage);
+  var nameEl = document.getElementById('sbmm-basemusic-name');
+  if (nameEl) nameEl.textContent = usingThisRemix ? remix.label : baseStyle.label;
+}
+function sbRenderMusicModalBody(){
+  var body = document.getElementById('sbmm-mixtray-body');
+  if (!body) return;
+  body.innerHTML = '';
+  sbMixMutedPrevMM = {};
+
+  var masterRow = document.createElement('div');
+  masterRow.className = 'mixch-master-row';
+  var bandsHtml = '';
+  for (var bi=0; bi<SB_MASTER_BANDS; bi++) bandsHtml += '<div class="mixch-master-band"><div class="mixch-master-band-fill" id="mixmaster-band-mm-'+bi+'"></div></div>';
+  masterRow.innerHTML = '<div class="mixch-master-label">Master</div><div class="mixch-master-meter">'+bandsHtml+'</div>';
+  body.appendChild(masterRow);
+
+  var board = document.createElement('div');
+  board.className = 'mixch-board';
+  body.appendChild(board);
+
+  function buildChannel(key, label, getVal, setVal, liveUpdate){
+    var val = getVal();
+    var col = document.createElement('div');
+    col.className = 'mixch-col';
+    col.innerHTML =
+      '<div class="mixch-meter"><div class="mixch-meter-fill" id="mixmeter-fill-mm-'+key+'"></div></div>' +
+      '<button class="mixch-mute" id="mixmute-mm-'+key+'" type="button">M</button>' +
+      '<div class="mixch-fader-row">' +
+        '<div class="mixch-fader-wrap"><input type="range" class="mixch-fader-vert" id="sbmixmm-'+key+'" min="0" max="1" step="0.01" value="'+val+'"></div>' +
+        '<div class="mixch-ticks"></div>' +
+      '</div>' +
+      '<div class="mixch-val" id="sbmixmm-val-'+key+'">'+Math.round(val*100)+'%</div>' +
+      '<div class="mixch-name">'+label+'</div>';
+    board.appendChild(col);
+    var slider = col.querySelector('#sbmixmm-'+key);
+    var muteBtn = col.querySelector('#mixmute-mm-'+key);
+    var valEl = col.querySelector('#sbmixmm-val-'+key);
+    slider.addEventListener('input', function(){
+      var v = parseFloat(this.value);
+      setVal(v);
+      valEl.textContent = Math.round(v*100)+'%';
+      sbMixTrayDirty = true;
+      sbPaintSaveMixBtn();
+      if (v > 0 && sbMixMutedPrevMM.hasOwnProperty(key)) { delete sbMixMutedPrevMM[key]; muteBtn.classList.remove('muted'); }
+      if (liveUpdate) liveUpdate(v);
+    });
+    muteBtn.addEventListener('click', function(){
+      if (sbMixMutedPrevMM.hasOwnProperty(key)) {
+        var prev = sbMixMutedPrevMM[key];
+        delete sbMixMutedPrevMM[key];
+        setVal(prev); slider.value = prev; valEl.textContent = Math.round(prev*100)+'%';
+        muteBtn.classList.remove('muted');
+        if (liveUpdate) liveUpdate(prev);
+      } else {
+        sbMixMutedPrevMM[key] = getVal();
+        setVal(0); slider.value = 0; valEl.textContent = '0%';
+        muteBtn.classList.add('muted');
+        if (liveUpdate) liveUpdate(0);
+      }
+      sbMixTrayDirty = true;
+      sbPaintSaveMixBtn();
+    });
+  }
+
+  LAYER_DEFS.forEach(function(ld){
+    buildChannel(ld.k, ld.label,
+      function(){ return sbMixStaging.mix[ld.k] !== undefined ? sbMixStaging.mix[ld.k] : 0.7; },
+      function(v){ sbMixStaging.mix[ld.k] = v; },
+      // Pushes into the real engine's live layer gain (the same
+      // applyLayerGain the old Instrument Mix panel used) if the Journey
+      // Preview card has actually started playing this stage — not the
+      // lightweight sbPreviewPlay engine, which this modal no longer
+      // starts on its own (see sbOpenMusicModal).
+      function(v){ if (sbJeLocalPlaying && studioDraft.activeStage === sbStageModalOpenIdx) applyLayerGain(ld.k, v); }
+    );
+  });
+
+  var divider = document.createElement('div');
+  divider.className = 'mixch-col-divider';
+  board.appendChild(divider);
+
+  buildChannel('musicVolLevel', 'Master',
+    function(){ return sbMixStaging.musicVolLevel; },
+    function(v){ sbMixStaging.musicVolLevel = v; },
+    function(v){
+      if (sbJeLocalPlaying && studioDraft.activeStage === sbStageModalOpenIdx && musicGain && audioCtx) {
+        try { musicGain.gain.setTargetAtTime(v * MAX_MUSIC, audioCtx.currentTime, 0.05); } catch(e){}
+      }
+    }
+  );
+}
+document.getElementById('sbmm-save-btn').addEventListener('click', function(){
+  sbMixTraySave(function(){
+    sbCloseMusicModal();
+    sbRenderStageModal();
+  });
+});
+document.getElementById('sbmm-new-btn').addEventListener('click', sbOpenChooseMusicModal);
+// ── CHOOSE MUSIC MODAL (reached from Edit Music's "New" button) ────────
+// Lets you swap the stage's base song entirely — browsing exactly like the
+// Library tab's own Music list (same .jtab-prow2 rows, same Custom/Default
+// toggle) — then lands back in Edit Music so the newly-chosen song's own
+// layers are right there to mix if you want.
+var sbChooseMusicSubTab = 'custom';
+var sbChooseMusicSelKind = null; // 'remix' | 'base'
+var sbChooseMusicSelData = null; // the remix object, or the base CHORDS key string
+function sbOpenChooseMusicModal(){
+  var s = sbCurrentStage();
+  // Closes Edit Music first rather than stacking both open at once — same
+  // z-index, so Choose Music (later in the DOM) would still paint on top
+  // regardless, but this keeps only one modal actually "live" at a time.
+  document.getElementById('sb-music-modal-overlay').classList.remove('open');
+  // Seed the initial selection from whatever's already assigned, so
+  // reopening this shows the current choice already highlighted.
+  if (s.usingRemix && studioDraft.customStyles[s.usingRemix]) {
+    var cs = studioDraft.customStyles[s.usingRemix];
+    sbChooseMusicSelKind = 'remix';
+    sbChooseMusicSelData = { globalId: cs.globalId, baseKey: cs.baseKey, label: cs.label, desc: cs.desc, mix: cs.mix, musicVolLevel: cs.musicVolLevel };
+  } else if (s.music) {
+    sbChooseMusicSelKind = 'base';
+    sbChooseMusicSelData = s.music;
+  } else {
+    sbChooseMusicSelKind = null;
+    sbChooseMusicSelData = null;
+  }
+  sbChooseMusicSubTab = 'custom';
+  sbRenderChooseMusicModal();
+  document.getElementById('sb-choosemusic-modal-overlay').classList.add('open');
+}
+function sbCloseChooseMusicModal(){
+  document.getElementById('sb-choosemusic-modal-overlay').classList.remove('open');
+  sbPreviewStop();
+}
+function sbcmSetPlayIcon(btn, playing){
+  btn.innerHTML = playing
+    ? '<svg viewBox="0 0 10 10" fill="currentColor"><rect x="1" y="0.5" width="3" height="9" rx="1"/><rect x="6" y="0.5" width="3" height="9" rx="1"/></svg>'
+    : '<svg viewBox="0 0 10 10" fill="currentColor"><path d="M1 0.5L9 5L1 9.5Z"/></svg>';
+  btn.classList.toggle('sb-preview-playing', playing);
+}
+function sbRenderChooseMusicModal(){
+  document.querySelectorAll('#sbcm-subtabs .lib-music-subtab-item').forEach(function(el){
+    el.classList.toggle('active', el.getAttribute('data-cm-subtab') === sbChooseMusicSubTab);
+  });
+  var list = document.getElementById('sbcm-list');
+  list.innerHTML = '';
+
+  function isSelected(kind, key){
+    if (kind === 'remix') return sbChooseMusicSelKind === 'remix' && sbChooseMusicSelData && sbChooseMusicSelData.globalId === key;
+    return sbChooseMusicSelKind === 'base' && sbChooseMusicSelData === key;
+  }
+  function makeRow(kind, key, name, meta, desc, previewKey, onSelect){
+    var row = document.createElement('div');
+    row.className = 'jtab-prow2 sbcm-row' + (isSelected(kind, key) ? ' sbcm-selected' : '');
+    var playing = sbPreviewKey === previewKey;
+    row.innerHTML =
+      '<div class="jtab-prow2-line1">' +
+        '<div class="jtab-prow2-icon">' + MUSIC_ROW_ICON_SVG + '</div>' +
+        '<div class="jtab-prow2-name">' + name + '</div>' +
+        '<div class="jtab-prow2-meta">' + meta + '</div>' +
+      '</div>' +
+      (desc ? '<div class="jtab-prow2-desc" style="color:#AC65FF">' + desc + '</div>' : '') +
+      '<div class="sbcm-play-btn' + (playing ? ' sb-preview-playing' : '') + '">' +
+        (playing
+          ? '<svg viewBox="0 0 10 10" fill="currentColor"><rect x="1" y="0.5" width="3" height="9" rx="1"/><rect x="6" y="0.5" width="3" height="9" rx="1"/></svg>'
+          : '<svg viewBox="0 0 10 10" fill="currentColor"><path d="M1 0.5L9 5L1 9.5Z"/></svg>') +
+      '</div>';
+    row.addEventListener('click', function(ev){
+      if (ev.target.closest('.sbcm-play-btn')) return;
+      onSelect();
+      sbRenderChooseMusicModal();
+    });
+    var playBtn = row.querySelector('.sbcm-play-btn');
+    playBtn.addEventListener('click', function(ev){
+      ev.stopPropagation();
+      sbPreviewPlay(previewKey, null);
+      document.querySelectorAll('.sbcm-play-btn.sb-preview-playing').forEach(function(b){ if (b !== playBtn) sbcmSetPlayIcon(b, false); });
+      sbcmSetPlayIcon(playBtn, sbPreviewKey === previewKey);
+    });
+    list.appendChild(row);
+  }
+
+  if (sbChooseMusicSubTab === 'custom') {
+    var remixes = libCustomMusicEntries();
+    if (!remixes.length) {
+      list.innerHTML = '<div class="lib-empty-msg">No remixes yet \u2014 customize a song\u2019s mix in Edit Music to see it here.</div>';
+    } else {
+      remixes.forEach(function(r){
+        makeRow('remix', r.globalId, r.label, (r.lastEdited || 'July 1, 2026'), r.desc, r.baseKey, function(){
+          sbChooseMusicSelKind = 'remix';
+          sbChooseMusicSelData = r;
+        });
+      });
+    }
+  } else {
+    var stock = libDefaultMusicEntries();
+    stock.forEach(function(s){
+      makeRow('base', s.id, s.name, 'July 1, 2026', s.desc, s.id, function(){
+        sbChooseMusicSelKind = 'base';
+        sbChooseMusicSelData = s.id;
+      });
+    });
+  }
+}
+document.querySelectorAll('#sbcm-subtabs [data-cm-subtab]').forEach(function(el){
+  el.addEventListener('click', function(){
+    sbChooseMusicSubTab = el.getAttribute('data-cm-subtab');
+    sbRenderChooseMusicModal();
+  });
+});
+document.getElementById('sbcm-save-btn').addEventListener('click', function(){
+  if (sbChooseMusicSelKind === 'remix') {
+    sbSelectRemixForSongOnly(sbChooseMusicSelData);
+  } else if (sbChooseMusicSelKind === 'base') {
+    sbSelectBaseForSongOnly(sbChooseMusicSelData);
+  }
+  sbCloseChooseMusicModal();
+  // Lands back in Edit Music, now showing whatever was just picked — Save
+  // there re-seeds sbMixStaging fresh from the (possibly brand new) song's
+  // own defaults or its existing remix, same as opening it normally would.
+  sbOpenMusicModal();
+  sbRenderStageModal();
 });
 // A single-word ALL-CAPS band constant (e.g. sbBandForHz/sbCarrierBand's
 // return value) gets sentence-cased here; a named-anchor label that's
@@ -11580,11 +11955,18 @@ function sbMeterLoopStart(){
       Object.keys(sbPreviewLayerAnalysers).forEach(function(k){
         var fillEl = document.getElementById('mixmeter-fill-'+k);
         if (fillEl) fillEl.style.height = Math.round(level(sbPreviewLayerAnalysers[k])*100)+'%';
+        // Edit Music modal's own board (see sbRenderMusicModalBody) — same
+        // meter data, "mm-" prefixed element instead, kept separate from
+        // the full-screen board's own ids so the two never collide.
+        var fillElMM = document.getElementById('mixmeter-fill-mm-'+k);
+        if (fillElMM) fillElMM.style.height = Math.round(level(sbPreviewLayerAnalysers[k])*100)+'%';
       });
     }
     if (sbPreviewMasterAnalyser) {
       var fillEl2 = document.getElementById('mixmeter-fill-musicVolLevel');
       if (fillEl2) fillEl2.style.height = Math.round(level(sbPreviewMasterAnalyser)*100)+'%';
+      var fillEl2MM = document.getElementById('mixmeter-fill-mm-musicVolLevel');
+      if (fillEl2MM) fillEl2MM.style.height = Math.round(level(sbPreviewMasterAnalyser)*100)+'%';
       if (!freqBuf) { freqBuf = new Uint8Array(sbPreviewMasterAnalyser.frequencyBinCount); bandBounds = computeBandBounds(freqBuf.length); }
       sbPreviewMasterAnalyser.getByteFrequencyData(freqBuf);
       for (var b=0; b<SB_MASTER_BANDS; b++){
@@ -11594,6 +11976,8 @@ function sbMeterLoopStart(){
         var pct = cnt ? Math.min(1, (sum/cnt)/255 * 1.6) : 0;
         var bandEl = document.getElementById('mixmaster-band-'+b);
         if (bandEl) bandEl.style.height = Math.round(pct*100)+'%';
+        var bandElMM = document.getElementById('mixmaster-band-mm-'+b);
+        if (bandElMM) bandElMM.style.height = Math.round(pct*100)+'%';
       }
     }
     sbMeterRAF = requestAnimationFrame(tick);
@@ -12135,6 +12519,8 @@ function sbDeleteSongRemix(){
 function sbPaintSaveMixBtn(){
   var btn = document.getElementById('sb-mixtray-save-btn');
   if (btn) btn.classList.toggle('sb-btn-accent', !!sbMixTrayDirty);
+  var btn2 = document.getElementById('sbmm-save-btn');
+  if (btn2) btn2.classList.toggle('sb-btn-accent', !!sbMixTrayDirty);
   sbPaintMiniSaveBtn();
 }
 // Saving duplicates the base song into a per-draft "Remix" (Mixing Board
@@ -12282,6 +12668,14 @@ function sbCommitNewMixSave(baseKey, label, desc, mixData){
   toast('Saved as a new Remix: "' + label + '"');
 }
 function sbMixTraySave(onComplete){
+  // Bug fix: choosing a *different default song* (no fader changes at all)
+  // used to still fall through to "no saved remix for this slot yet" below
+  // and prompt to name a new Remix — even though sbSelectBaseForSongOnly
+  // already correctly pointed the stage straight at the plain default
+  // song, with nothing customized to actually save. Only faders (or the
+  // Stage Name/other fields that set sbMixTrayDirty) should ever trigger
+  // the remix-naming flow; a plain unmodified song selection shouldn't.
+  if (!sbMixTrayDirty) { if (onComplete) onComplete(); return; }
   var baseKey = sbMixStaging.baseKey;
   var remixKey = sbRemixKey(baseKey, studioDraft.activeStage);
   var mixData = { mix: Object.assign({}, sbMixStaging.mix), musicVolLevel: sbMixStaging.musicVolLevel };
@@ -12776,9 +13170,12 @@ function _sbStartNewDraftNow(){
   sbRenderAll();
   sbHideStudioHome();
   // A fresh draft should always land on the plain Journey Editor screen,
-  // never with the Edit Journey Info or Edit Stage modal already open over it.
+  // never with the Edit Journey Info, Edit Stage, or Edit Music modal
+  // already open over it.
   sbCloseJourneyModal();
   if (typeof sbCloseStageModal === 'function') sbCloseStageModal();
+  if (typeof sbCloseMusicModal === 'function') sbCloseMusicModal();
+  if (typeof sbCloseChooseMusicModal === 'function') sbCloseChooseMusicModal();
 }
 // Public entry point — goes through the draft-switch prompt (§19) first.
 function sbStartNewDraft(){
