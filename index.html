@@ -79,14 +79,14 @@ html,body{width:100%;height:100%;background:#000;display:flex;justify-content:ce
    proven unpredictable to verify remotely) is a direct, requested fix:
    whatever the previous top offset came out to, this is exactly half of it,
    in every context. */
-.hamburger{position:absolute;left:20px;top:calc((42px + env(safe-area-inset-top, 0px) / var(--pw-scale, 1)) / 2);width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:26;}
+.hamburger{position:absolute;left:39px;top:calc((42px + env(safe-area-inset-top, 0px) / var(--pw-scale, 1)) / 2);width:22px;height:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:26;}
 .hamburger span{display:block;height:1.5px;background:rgba(255,255,255,0.85);border-radius:2px;}
 .hamburger span:nth-child(1){width:18px;}.hamburger span:nth-child(2){width:12px;}.hamburger span:nth-child(3){width:15px;}
 .logo-wrap{position:absolute;left:113px;top:calc((43px + env(safe-area-inset-top, 0px) / var(--pw-scale, 1)) / 2);width:149px;height:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:26;}
 .hd-word{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:400;letter-spacing:0.06em;color:#fff;white-space:nowrap;}
 .hd-word-2{color:#AC65FF;}
 .hd-tag{font-family:'Orbitron',sans-serif;font-size:9px;font-weight:400;color:#BCBCBC;margin-top:3px;white-space:nowrap;letter-spacing:5.35px;}
-.gear-wrap{position:absolute;left:330px;top:calc((44px + env(safe-area-inset-top, 0px) / var(--pw-scale, 1)) / 2);width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:26;}
+.gear-wrap{position:absolute;left:333px;top:calc((44px + env(safe-area-inset-top, 0px) / var(--pw-scale, 1)) / 2);width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:26;}
 .gear-wrap img{width:24px;height:24px;opacity:0.85;}
 .headline{position:absolute;left:72px;top:214px;width:231px;z-index:5;pointer-events:none;transition:opacity 0.4s;}
 .headline img{display:block;width:231px;height:auto;}
@@ -762,7 +762,7 @@ overflow:visible;}
    spec, since this is the one modal that's meant to read as fully solid.
    Padding/field spacing tightened throughout to match the source comp,
    which fits all four fields on screen with no scrolling needed. */
-.sb-jd-modal{position:relative;background:linear-gradient(180deg,rgb(47,47,47) 0%,rgb(30,30,30) 100%);border-radius:4px;padding:12px;font-family:'Orbitron',sans-serif;}
+.sb-jd-modal{position:relative;background:linear-gradient(180deg,rgb(47,47,47) 0%,rgb(30,30,30) 100%);border-radius:4px;padding:20px;font-family:'Orbitron',sans-serif;}
 /* Title stays a bit bigger than the field labels below it (matches the
    comp — "EDIT JOURNEY INFO" is clearly larger than "JOURNEY CATEGORY"
    there), just smaller than my first pass. Field labels themselves come
@@ -770,7 +770,7 @@ overflow:visible;}
 .sb-jd-hd .sb-home-section-hd{font-size:13px;letter-spacing:0.06em;}
 .sb-jd-modal .sb-field .sb-home-section-hd{font-size:10px;margin-bottom:4px;}
 .sb-jd-modal .sb-home-section-hd{font-weight:400;}
-.sb-jd-modal .sb-field{margin-bottom:14px;}
+.sb-jd-modal .sb-field{margin-bottom:20px;}
 .sb-jd-modal .sb-field:last-child{margin-bottom:0;}
 /* Character count moved up onto the same line as its field's own label
    (right-justified there) instead of sitting on its own line below the
@@ -816,9 +816,9 @@ overflow:visible;}
    room to spare, unlike Journey Info which is tuned to fit exactly.
    Scoped by ID rather than changing the shared .sb-jd-modal rules above,
    so Journey Info's own fit isn't affected. */
-#sb-stage-modal-overlay .sb-jd-modal{padding:16px;}
+#sb-stage-modal-overlay .sb-jd-modal{padding:24px;}
 #sb-stage-modal-overlay .sb-jd-hd{margin-top:-10.5px;}
-#sb-stage-modal-overlay .sb-field{margin-bottom:14px;}
+#sb-stage-modal-overlay .sb-field{margin-bottom:20px;}
 #sb-stage-modal-overlay .sb-steppers{gap:24px;}
 /* Edit Music modal — reuses the Mixing Board's existing fader/meter/mute
    CSS classes as-is (.mixch-*), just scaled down within this modal
@@ -830,17 +830,17 @@ overflow:visible;}
 .sbmm-hd-actions{display:flex;gap:8px;flex-shrink:0;}
 .sbmm-basemusic{font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:10px;}
 .sbmm-basemusic-val{color:var(--accent,#a78bfa);}
-#sb-music-modal-overlay .mixch-board{padding:6px 4px 8px;gap:4px;}
-#sb-music-modal-overlay .mixch-col{gap:5px;}
-#sb-music-modal-overlay .mixch-meter{height:30px;}
-#sb-music-modal-overlay .mixch-mute{height:16px;font-size:8px;}
-#sb-music-modal-overlay .mixch-fader-wrap{height:75px;}
-#sb-music-modal-overlay .mixch-fader-vert{width:75px;}
-#sb-music-modal-overlay .mixch-ticks{height:70px;}
-#sb-music-modal-overlay .mixch-val{font-size:8px;}
-#sb-music-modal-overlay .mixch-name{font-size:8px;}
-#sb-music-modal-overlay .mixch-master-row{padding:4px 10px 2px;gap:8px;}
-#sb-music-modal-overlay .mixch-master-meter{height:22px;}
+#sb-music-modal-overlay .mixch-board{padding:10px 8px 14px;gap:8px;}
+#sb-music-modal-overlay .mixch-col{gap:8px;}
+#sb-music-modal-overlay .mixch-meter{height:40px;}
+#sb-music-modal-overlay .mixch-mute{height:20px;font-size:9px;}
+#sb-music-modal-overlay .mixch-fader-wrap{height:95px;}
+#sb-music-modal-overlay .mixch-fader-vert{width:95px;}
+#sb-music-modal-overlay .mixch-ticks{height:90px;}
+#sb-music-modal-overlay .mixch-val{font-size:9px;}
+#sb-music-modal-overlay .mixch-name{font-size:9px;}
+#sb-music-modal-overlay .mixch-master-row{padding:8px 14px 6px;gap:10px;}
+#sb-music-modal-overlay .mixch-master-meter{height:28px;}
 #sb-music-modal-overlay .mixch-master-label{font-size:9px;}
 /* Choose Music modal — same .jtab-prow2 row component the Library tab's
    own Music list uses, reused wholesale, plus a small Play button (same
@@ -850,7 +850,7 @@ overflow:visible;}
    many rows are actually in the list — without this, a short list (few
    Custom Music remixes) let the card shrink to fit its content, exposing
    the Edit Stage modal underneath through the gap below it. */
-#sb-choosemusic-modal-overlay .sb-jd-modal{height:339px;display:flex;flex-direction:column;}
+#sb-choosemusic-modal-overlay .sb-jd-modal{height:420px;display:flex;flex-direction:column;}
 #sb-choosemusic-modal-overlay .sb-jd-hd{flex-shrink:0;}
 #sb-choosemusic-modal-overlay .lib-music-subtabs{flex-shrink:0;margin:0 0 10px;border-radius:4px;}
 #sbcm-list{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;}
@@ -1827,7 +1827,7 @@ overflow:visible;}
              breaking updates to whichever board actually has focus. -->
         <div id="sb-music-modal-overlay">
           <div class="sb-jd-modal">
-            <button id="btn-close-music-modal" onclick="sbCloseMusicModal()"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="9" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="1" x2="1" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+            <button id="btn-close-music-modal" onclick="sbCloseMusicModalToStage()"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1" y1="1" x2="9" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="1" x2="1" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></button>
             <div class="sb-jd-hd">
               <div class="sb-home-section-hd" style="margin-bottom:0;">Edit Music</div>
               <div class="sbmm-hd-actions">
@@ -11490,6 +11490,15 @@ function sbOpenMusicModal(){
   // (applyLayerGain/musicGain, in buildChannel's liveUpdate below) if it's
   // already playing, so changes are audible without this modal ever
   // starting anything on its own.
+  // Edit Music is only ever reached while Edit Stage is open behind it
+  // (the Stage Music "Edit" button, or landing back here after Choose
+  // Music). Both overlays are transparent outside their own card, so with
+  // both left "open" at once, Edit Stage's header could show through
+  // around/above Edit Music's card — especially once scrolled. Hiding
+  // Edit Stage for as long as Edit Music is open (and restoring it in
+  // sbCloseMusicModal below) keeps exactly one modal visible at a time,
+  // the same pattern Choose Music already uses relative to this modal.
+  document.getElementById('sb-stage-modal-overlay').classList.remove('open');
   document.getElementById('sb-music-modal-overlay').classList.add('open');
 }
 function sbCloseMusicModal(){
@@ -11598,9 +11607,18 @@ function sbRenderMusicModalBody(){
     }
   );
 }
+function sbCloseMusicModalToStage(){
+  sbCloseMusicModal();
+  // Only reopen Edit Stage from the two places the person actually meant
+  // to land back on it (this modal's own X button, and after Save) — not
+  // from sbCloseMusicModal()'s other callers (defensive nav-away cleanup,
+  // discarding into a new draft), where reopening Edit Stage would just
+  // recreate the original "stuck open" bug on a different modal.
+  document.getElementById('sb-stage-modal-overlay').classList.add('open');
+}
 document.getElementById('sbmm-save-btn').addEventListener('click', function(){
   sbMixTraySave(function(){
-    sbCloseMusicModal();
+    sbCloseMusicModalToStage();
     sbRenderStageModal();
   });
 });
