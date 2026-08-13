@@ -114,7 +114,7 @@ html,body{width:100%;height:100%;background:#000;display:flex;justify-content:ce
 #btn-sleep{left:112px;top:611px;}#btn-explore{left:260px;top:611px;}
 
 /* Begin button */
-.begin-btn{position:absolute;left:14.183px;top:680.915px;width:346.259px;height:48.3328px;border-radius:4px;
+.begin-btn{position:absolute;left:14.183px;top:680.915px;width:346.259px;height:48.3328px;border-radius:8px;
   background:rgba(0,0,0,0.6);border:1.5px solid rgba(255,255,255,0.5);cursor:pointer;
   display:flex;align-items:center;justify-content:center;z-index:10;padding:0;
   transition:opacity 0.4s,border-color .3s ease,box-shadow .3s ease;box-sizing:border-box;}
@@ -148,23 +148,22 @@ html,body{width:100%;height:100%;background:#000;display:flex;justify-content:ce
 .pw-card{
   position:absolute;inset:0;width:346.205px;height:249.547px;border-radius:3.5px;
   background:rgba(5,5,5,0.7);box-sizing:border-box;
-  border:1.5px solid var(--accent,#FF5A2A);
 }
 
 /* Header text — centered */
 #ov-name{position:absolute;left:0;right:0;top:31.55px;text-align:center;font-family:'Orbitron',sans-serif;
   font-size:16px;font-weight:400;color:rgba(255,255,255,0.9);letter-spacing:0.1em;white-space:nowrap;}
-#ov-sub{position:absolute;left:0;right:0;top:60.55px;text-align:center;font-family:'Orbitron',sans-serif;
+#ov-sub{position:absolute;left:0;right:0;top:60.55px;text-align:center;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;
   font-size:10px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.15em;}
-#ov-stageline{position:absolute;left:0;right:0;top:82.55px;text-align:center;font-family:'Orbitron',sans-serif;
-  font-size:10.5px;font-weight:600;color:var(--accent,#fff);letter-spacing:0.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#ov-stageline{position:absolute;left:0;right:0;top:82.55px;text-align:center;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;
+  font-size:10.5px;font-weight:400;color:var(--accent,#fff);letter-spacing:0.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /* Category icon top-left (crosshair, per-journey), scaled from 44x54 native */
 #card-corner-icon{position:absolute;left:11px;top:11px;width:32px;height:39px;pointer-events:none;z-index:5;}
 
 /* Info + save buttons top-right — centers at (281.5,25.3) and (312.6,25.3), r=12.5 */
 #ov-btns{position:absolute;right:13px;top:11px;display:flex;gap:6px;align-items:center;z-index:5;}
-.ibtn-kebab{width:26px;height:26px;border:1px solid #757575;border-radius:5px;box-sizing:border-box;
+.ibtn-kebab{width:26px;height:26px;border-radius:5px;box-sizing:border-box;
   display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;}
 .ibtn-kebab div{width:3px;height:3px;border-radius:50%;background:#bdbdbd;}
 #ov-btns .ibtn{width:25px;height:25px;cursor:pointer;}
@@ -221,16 +220,16 @@ html,body{width:100%;height:100%;background:#000;display:flex;justify-content:ce
 #ov-stage-row2{display:none;}
 .ov-stats-row{position:absolute;left:0;top:191px;width:346.205px;display:flex;justify-content:space-around;text-align:center;}
 .ov-stat{max-width:110px;padding:0 4px;box-sizing:border-box;overflow:hidden;}
-.ov-stat-lbl{font-family:'Orbitron',sans-serif;font-size:8.5px;font-weight:400;letter-spacing:0.15em;color:rgba(255,255,255,0.55);
+.ov-stat-lbl{font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;font-size:8.5px;font-weight:400;letter-spacing:0.15em;color:rgba(255,255,255,0.55);
   text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.ov-stat-val{font-family:'Orbitron',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:0.05em;color:var(--accent,#fff);
+.ov-stat-val{font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;font-size:9.5px;font-weight:400;letter-spacing:0.05em;color:var(--accent,#fff);
   margin-top:3px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .ov-times-row{position:absolute;left:0;top:228.55px;width:346.205px;display:flex;justify-content:space-between;padding:0 18px;
-  font-family:'Orbitron',sans-serif;font-size:8.5px;font-weight:400;letter-spacing:0.05em;color:rgba(255,255,255,0.75);box-sizing:border-box;}
+  font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;font-size:8.5px;font-weight:400;letter-spacing:0.05em;color:rgba(255,255,255,0.75);box-sizing:border-box;}
 .ov-times-row div{flex:1;white-space:nowrap;}
 .ov-times-row div:first-child{text-align:left;}
 .ov-times-row div:last-child{text-align:right;}
-.ov-time-val{color:var(--accent,#fff);font-weight:600;}
+.ov-time-val{color:var(--accent,#fff);font-weight:400;}
 
 /* ══════════════════════════════════════
    INFO CARD (fade overlay) — v1.5, journey description only
@@ -255,11 +254,11 @@ overflow:visible;}
 /* Text overlays within info card — title/subtitle are centered, matching the Play Card */
 #ic-name{position:absolute;left:0;right:0;top:31.55px;text-align:center;font-family:'Orbitron',sans-serif;
   font-size:16px;font-weight:400;color:rgba(255,255,255,0.9);letter-spacing:0.1em;white-space:nowrap;z-index:3;}
-#ic-sub{position:absolute;left:0;right:0;top:60.55px;text-align:center;font-family:'Orbitron',sans-serif;
-  font-size:10px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:0.15em;z-index:3;}
+#ic-sub{position:absolute;left:0;right:0;top:60.55px;text-align:center;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;
+  font-size:10px;font-weight:400;color:rgba(255,255,255,0.6);letter-spacing:normal;z-index:3;}
 /* Info header right buttons (info + save — no BACK label in v1.5, tap "i" again to close) */
 #ic-btns{position:absolute;right:13px;top:11px;display:flex;gap:6px;align-items:center;z-index:5;}
-.ibtn-close{width:26px;height:26px;border:1px solid #fff;border-radius:5px;box-sizing:border-box;
+.ibtn-close{width:26px;height:26px;border-radius:5px;box-sizing:border-box;
   display:flex;align-items:center;justify-content:center;cursor:pointer;}
 
 
@@ -272,9 +271,9 @@ overflow:visible;}
    below, in HTML) hides scrolled text behind that header instead of letting
    it show through underneath. */
 #ic-text{position:absolute;left:16px;right:16px;top:82.55px;bottom:14px;overflow-y:auto;-webkit-overflow-scrolling:touch;
-  font-family:'Orbitron',sans-serif;color:#fff;letter-spacing:0.02em;line-height:1.7;z-index:1;}
-#ic-text .ic-headline{font-size:12px;font-weight:600;letter-spacing:0.2em;line-height:1.6;color:var(--accent,#a78bfa);margin-bottom:14px;}
-#ic-text .ic-how{font-size:10.5px;color:#9a9a9a;letter-spacing:0.2em;line-height:1.7;margin-bottom:14px;white-space:pre-wrap;}
+  font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;color:#fff;letter-spacing:normal;line-height:1.7;z-index:1;}
+#ic-text .ic-headline{font-size:12px;font-weight:400;letter-spacing:normal;line-height:1.6;color:var(--accent,#a78bfa);margin-bottom:14px;}
+#ic-text .ic-how{font-size:10.5px;color:#9a9a9a;letter-spacing:normal;line-height:1.7;margin-bottom:14px;white-space:pre-wrap;}
 .ic-header-mask{position:absolute;left:1.5px;top:1.5px;width:343.205px;height:60px;
   background:linear-gradient(to bottom, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.97) 72%, rgba(8,8,8,0) 100%);
   z-index:2;pointer-events:none;border-radius:3.5px 3.5px 0 0;}
@@ -289,7 +288,7 @@ overflow:visible;}
 /* ══════════════════════════════════════
    SESSION BUTTON (x=18, y=682, w=338, h=49)
 ══════════════════════════════════════ */
-.session-wrap{position:absolute;left:14.183px;top:680.915px;width:346.259px;height:48.3328px;border-radius:4px;box-sizing:border-box;
+.session-wrap{position:absolute;left:14.183px;top:680.915px;width:346.259px;height:48.3328px;border-radius:8px;box-sizing:border-box;
   background:rgba(0,0,0,0.6);border:1.5px solid var(--accent,#fff);
   z-index:20;opacity:0;pointer-events:none;transition:opacity 0.4s;cursor:pointer;
   display:flex;align-items:center;justify-content:center;}
@@ -351,11 +350,11 @@ overflow:visible;}
 .mixch-fader-vert{width:140px;height:30px;margin:0;transform:rotate(-90deg);accent-color:var(--accent,#a78bfa);cursor:pointer;}
 .mixch-ticks{width:5px;height:132px;flex-shrink:0;background:repeating-linear-gradient(to bottom, rgba(255,255,255,0.4) 0px, rgba(255,255,255,0.4) 1px, transparent 1px, transparent 12px);}
 .mixch-val{font-size:8.5px;color:rgba(255,255,255,0.4);}
-.mixch-name{font-size:9px;letter-spacing:0.04em;color:rgba(255,255,255,0.7);text-transform:uppercase;text-align:center;}
+.mixch-name{font-size:9px;letter-spacing:normal;color:rgba(255,255,255,0.7);text-transform:uppercase;text-align:center;}
 /* ── Master spectrum meter — 8-band digital display across the top of the
    Mixing Board, fed by the same master analyser as the Master channel. ── */
 .mixch-master-row{display:flex;align-items:center;gap:10px;padding:14px 18px 2px;}
-.mixch-master-label{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.4);text-transform:uppercase;flex-shrink:0;}
+.mixch-master-label{font-size:9px;letter-spacing:normal;color:rgba(255,255,255,0.4);text-transform:uppercase;flex-shrink:0;}
 .mixch-master-meter{flex:1;display:flex;align-items:flex-end;gap:3px;height:36px;}
 .mixch-master-band{flex:1;height:100%;border-radius:2px;background:#050505;border:1px solid rgba(255,255,255,0.12);position:relative;overflow:hidden;display:flex;align-items:flex-end;}
 .mixch-master-band-fill{width:100%;height:0%;background:linear-gradient(to top,#2ee86a 0%,#2ee86a 50%,#e8d24a 75%,#ff3b3b 100%);transition:height 0.05s linear;}
@@ -413,21 +412,21 @@ overflow:visible;}
    component in the app, specifically to rule out any more cross-talk. */
 .lib-toggle{display:flex;gap:0;margin:0;height:26.2534px;}
 .lib-toggle-item{flex:1;height:26.2534px;display:flex;align-items:center;justify-content:center;
-  background:#191919;color:rgba(255,255,255,0.55);font-family:'Orbitron',sans-serif;font-weight:400;
+  background:rgba(25,25,25,0.7);color:rgba(255,255,255,0.55);font-family:'Orbitron',sans-serif;font-weight:400;
   font-size:11px;letter-spacing:0.12em;text-align:center;text-transform:uppercase;cursor:pointer;box-sizing:border-box;}
-.lib-toggle-item.active{background:linear-gradient(to top, #2F2F2F 0%, #404040 100%);color:#fff;}
-.lib-catbar{width:100%;height:26px;background:linear-gradient(to top, #1E1E1E 0%, #2F2F2F 100%);
+.lib-toggle-item.active{background:linear-gradient(to top, rgba(47,47,47,0.7) 0%, rgba(64,64,64,0.7) 100%);color:#fff;}
+.lib-catbar{width:100%;height:26px;background:linear-gradient(to top, rgba(30,30,30,0.7) 0%, rgba(47,47,47,0.7) 100%);
   display:flex;align-items:center;justify-content:space-between;padding:0 12px;overflow-x:auto;
   font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:0.1em;font-weight:400;box-sizing:border-box;}
 .lib-catbar-item{color:#6f6f6f;white-space:nowrap;cursor:pointer;padding:4px 0;background:none;border:none;font-family:inherit;font-size:inherit;letter-spacing:inherit;}
-.lib-catbar-item.active{color:#fff;font-weight:700;}
+.lib-catbar-item.active{color:#fff;font-weight:400;}
 /* Work Order 011Q: Custom Music / Default Music sub-filter, same visual
    language as the category bar just below it. */
 .lib-music-subtabs{width:100%;height:26px;background:linear-gradient(to top, #1E1E1E 0%, #2F2F2F 100%);
   display:flex;align-items:center;padding:0 12px;box-sizing:border-box;
   font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:0.1em;font-weight:400;}
 .lib-music-subtab-item{flex:1;text-align:center;color:#6f6f6f;cursor:pointer;text-transform:uppercase;}
-.lib-music-subtab-item.active{color:#fff;font-weight:700;}
+.lib-music-subtab-item.active{color:#fff;font-weight:400;}
 .sb-section-hd{font-size:11px;letter-spacing:0.12em;color:#fff;text-transform:uppercase;font-weight:700;padding-bottom:10px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.12);}
 .sb-field{margin-bottom:20px;}
 .sb-field-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
@@ -463,7 +462,7 @@ overflow:visible;}
 .sb-knob-num{font-size:22px;font-weight:700;color:#fff;line-height:1;cursor:text;pointer-events:auto;}
 .sb-knob-unit{font-size:9px;letter-spacing:0.08em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-top:2px;}
 .sb-knob-label{font-size:10px;letter-spacing:0.06em;color:#fff;text-transform:uppercase;font-weight:700;line-height:1.3;}
-.sb-knob-sub{font-size:10px;letter-spacing:0.06em;color:var(--accent,#a78bfa);text-transform:uppercase;margin-top:2px;}
+.sb-knob-sub{font-size:10px;letter-spacing:normal;color:var(--accent,#a78bfa);text-transform:uppercase;margin-top:2px;}
 .sb-divider{height:1px;background:rgba(255,255,255,0.12);margin:22px 0;}
 .sb-music-row{display:flex;align-items:flex-end;justify-content:space-between;}
 .sb-music-name{font-size:14px;font-weight:700;color:var(--accent,#a78bfa);text-transform:uppercase;letter-spacing:0.03em;}
@@ -527,7 +526,7 @@ overflow:visible;}
    (.jtab-fcard2-kebab: absolute, top:5.5px/right:5.5px, 23x23, radius:5,
    #757575 border) — matching the Journey Preview card directly above this
    modal, rather than living inline next to Save. */
-#btn-close-jd-modal,#btn-close-stage-modal,#btn-close-music-modal,#btn-close-choosemusic-modal{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border-radius:5px;background:transparent;border:1px solid #757575;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-sizing:border-box;}
+#btn-close-jd-modal,#btn-close-stage-modal,#btn-close-music-modal,#btn-close-choosemusic-modal{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border-radius:5px;background:transparent;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;box-sizing:border-box;}
 /* Studio tab empty states (§18) — shown in place of a tab's real content
    when nothing is loaded in Studio yet. */
 .sb-empty-state{text-align:center;padding:60px 20px;}
@@ -573,7 +572,7 @@ overflow:visible;}
 /* Matches .page-title's Journeys/Library-tab override exactly (same
    inherited Montserrat body font — neither .page-title nor .sb-title use
    Orbitron) rather than a bespoke title style. */
-.sb-home-title{flex-shrink:0;font-size:14px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:700;text-align:center;margin-bottom:20px;}
+.sb-home-title{flex-shrink:0;font-size:14px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:400;text-align:center;margin-bottom:20px;font-family:'Orbitron',sans-serif;}
 /* Slim, barely-rounded outline buttons — shared spec for New Journey/New
    Music Mix up top and the Open button on the Resume Last card (all
    #757575-bordered, border-radius:5px, ~23px tall in the source SVG).
@@ -584,7 +583,7 @@ overflow:visible;}
 .sb-home-new-btn:active{background:rgba(255,255,255,0.08);}
 /* Same font styling as .jtab-section-label2 (Featured/Browse Journeys
    section headers) — solid white, not the dimmer gray I'd used before. */
-.sb-home-section-hd{flex-shrink:0;font-size:12px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:700;margin:0 0 12px;}
+.sb-home-section-hd{flex-shrink:0;font-size:12px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:400;margin:0 0 12px;font-family:'Orbitron',sans-serif;}
 /* Resume Recent's own scroll is bounded to stop right below its header,
    rather than the whole page scrolling as one unit — same technique
    #journeys-panel uses for #jtab-fixed-header/#jtab-scroll-area: header
@@ -629,10 +628,10 @@ overflow:visible;}
    difference. Scoped to these two card types specifically (not a global
    #studio-panel padding change), so section headers/buttons stay at the
    normal inset and only the cards themselves run wider. */
-.sb-home-last{position:relative;margin:0 -16px;padding:16px;border-radius:4px;background:linear-gradient(180deg,rgba(47,47,47,0.9) 0%,rgba(30,30,30,0.9) 100%);cursor:pointer;}
+.sb-home-last{position:relative;margin:0 -16px;padding:16px;border-radius:4px;background:linear-gradient(180deg,rgba(46,46,46,0.5) 0%,rgba(0,0,0,0.5) 100%);cursor:pointer;}
 .sb-home-last:active{filter:brightness(1.08);}
 .sb-home-open-btn{position:absolute;top:5.5px;right:34.5px;height:23px;padding:0 12px;border-radius:5px;border:1px solid #757575;background:transparent;color:#fff;font-family:'Orbitron',sans-serif;font-weight:400;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;box-sizing:border-box;display:flex;align-items:center;justify-content:center;}
-.sb-home-last-name{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:400;color:#fff;margin-top:38px;margin-bottom:8px;}
+.sb-home-last-name{font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;font-size:15px;font-weight:400;color:#fff;margin-top:38px;margin-bottom:8px;}
 .sb-home-last-desc{font-size:12px;line-height:1.5;color:var(--accent,#a78bfa);margin-bottom:16px;}
 .sb-home-last-bottomrow{display:flex;align-items:flex-end;justify-content:space-between;}
 .sb-home-last-stats{font-size:11px;line-height:1.6;color:var(--accent,#a78bfa);}
@@ -652,12 +651,12 @@ overflow:visible;}
 ══════════════════════════════════════ */
 /* Widened to sit 4px from the screen edge instead of #studio-panel's usual
    20px inset (same treatment as Studio Home's Resume Last/Recent cards). */
-.sb-je-card{position:relative;margin-left:-16px;margin-right:-16px;background:linear-gradient(180deg,rgba(47,47,47,0.9) 0%,rgba(30,30,30,0.9) 100%);border-radius:4px;padding:16px;margin-bottom:26px;}
+.sb-je-card{position:relative;margin-left:-16px;margin-right:-16px;background:linear-gradient(180deg,rgba(46,46,46,0.5) 0%,rgba(0,0,0,0.5) 100%);border-radius:4px;padding:16px;margin-bottom:26px;}
 /* Journey Preview specifically runs tighter than .sb-je-card's shared
    default (16px padding, 10px row gap) — the source comp measures 128px
    tall at 375px width, notably shorter than Journey Info's own card.
    Scoped to #sb-je-preview-card so Journey Info isn't affected. */
-#sb-je-preview-card{padding:8px 16px;}
+#sb-je-preview-card{padding:8px 16px;background:linear-gradient(180deg, color-mix(in srgb, var(--accent,#a78bfa) 20%, transparent) 0%, color-mix(in srgb, var(--accent,#a78bfa) 6%, transparent) 100%);border-radius:20px;}
 #sb-je-preview-card .sb-je-row1{margin-bottom:3px;}
 /* Scroll boundary sits at the bottom of the Journey Preview card and stays
    there — title/buttons/Journey Preview form a fixed top section, and only
@@ -677,7 +676,7 @@ overflow:visible;}
    sits ABOVE the name instead of beside it) never actually centered
    against this row — it just happened to look close enough at a glance. */
 .sb-je-row1-icon{flex-shrink:0;width:30.9px;height:30.9px;object-fit:contain;}
-.sb-je-name{font-family:'Orbitron',sans-serif;font-size:9.7px;font-weight:400;letter-spacing:0.1em;color:#fff;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sb-je-name{font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;font-size:10.7px;font-weight:400;letter-spacing:0.1em;color:#fff;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 /* Indented to align under the title text (icon width + row1's gap), not
    under the icon itself, matching the source comp. */
 .sb-je-sub{margin-left:41px;margin-top:-10px;font-size:12px;color:var(--accent,#a78bfa);margin-bottom:16px;}
@@ -688,7 +687,7 @@ overflow:visible;}
    (.jtab-fcard2-kebab: top:5.5px/right:5.5px) — matches the established
    sitewide convention (Library/Featured cards, Resume Last) exactly,
    rather than living inline in the icon+title row. */
-.sb-je-kebab{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border:1px solid #757575;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
+.sb-je-kebab{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
 .sb-je-kebab div{width:3px;height:3px;border-radius:50%;background:#bdbdbd;}
 .sb-je-overview{font-size:12px;line-height:1.5;color:var(--accent,#a78bfa);margin-bottom:10px;}
 .sb-je-desc{font-size:11.5px;line-height:1.5;color:rgba(255,255,255,0.55);}
@@ -722,10 +721,10 @@ overflow:visible;}
 .sb-je-hit-side svg{width:30px;height:30px;}
 .sb-je-hit-play{width:46px;height:46px;}
 .sb-je-hit-play svg{width:46px;height:46px;}
-.sb-je-stage-row{position:relative;display:flex;align-items:center;gap:10px;min-height:43px;margin-left:-16px;margin-right:-16px;background:linear-gradient(180deg,rgba(47,47,47,0.9) 0%,rgba(30,30,30,0.9) 100%);border-radius:4px;padding:0 44px 0 14px;margin-bottom:8px;box-sizing:border-box;cursor:pointer;}
+.sb-je-stage-row{position:relative;display:flex;align-items:center;gap:10px;min-height:43px;margin-left:-16px;margin-right:-16px;background:linear-gradient(180deg,rgba(46,46,46,0.5) 0%,rgba(0,0,0,0.5) 100%);border-radius:4px;padding:0 44px 0 14px;margin-bottom:8px;box-sizing:border-box;cursor:pointer;}
 /* Matches .jtab-prow2-name exactly (same row-card title treatment used on
    Browse Journeys / Library rows). */
-.sb-je-stage-name{flex:1;min-width:0;font-family:'Orbitron',sans-serif;font-size:9.7px;font-weight:400;letter-spacing:0.1em;color:rgba(255,255,255,0.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sb-je-stage-name{flex:1;min-width:0;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;font-size:10.7px;font-weight:400;letter-spacing:0.1em;color:rgba(255,255,255,0.9);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .sb-je-stage-name.sb-je-stage-active{color:var(--accent,#a78bfa);}
 .sb-je-stage-dur{font-size:11px;color:rgba(255,255,255,0.45);flex-shrink:0;}
 /* Tiny standalone dropdown for a stage row's kebab — the shared ck-menu
@@ -754,21 +753,40 @@ overflow:visible;}
    same way on an inset:0 absolutely-positioned box as it does in normal
    flow: with left/right both pinned to 0, a negative left/right margin
    still pushes each edge outward by that amount. */
-#sb-jd-modal-overlay,#sb-stage-modal-overlay,#sb-music-modal-overlay,#sb-choosemusic-modal-overlay{position:absolute;inset:0;margin:0 -16px;z-index:60;display:none;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-#sb-jd-modal-overlay.open,#sb-stage-modal-overlay.open,#sb-music-modal-overlay.open,#sb-choosemusic-modal-overlay.open{display:block;}
+/* Top/bottom margins pull the overlay's box out past its own narrower
+   "scroll area" container: 26px is the Journey Preview card's own fixed
+   margin-bottom (always exactly 26px regardless of the card's rendered
+   height, since that's a margin not a measured gap), so -22px closes it to
+   4px; 24px is #studio-panel's own fixed bottom padding, so -20px closes
+   that gap to 4px above the nav bar too. Both are constants unrelated to
+   any dynamically-measured layout, so this holds regardless of content. */
+#sb-jd-modal-overlay,#sb-stage-modal-overlay,#sb-music-modal-overlay,#sb-choosemusic-modal-overlay{position:absolute;inset:0;margin:-22px -16px -26px -16px;z-index:60;display:none;box-sizing:border-box;overflow:hidden;}
+#sb-jd-modal-overlay.open,#sb-stage-modal-overlay.open,#sb-music-modal-overlay.open,#sb-choosemusic-modal-overlay.open{display:flex;flex-direction:column;}
 /* Same corner radius + gradient language as every other container in
    Studio (.sb-je-card/.jtab-prow2 etc: 4px radius, the #2F2F2F→#1E1E1E
    gradient) — just at full 100% opacity instead of their usual 90%, per
    spec, since this is the one modal that's meant to read as fully solid.
    Padding/field spacing tightened throughout to match the source comp,
    which fits all four fields on screen with no scrolling needed. */
-.sb-jd-modal{position:relative;background:linear-gradient(180deg,rgb(47,47,47) 0%,rgb(30,30,30) 100%);border-radius:4px;padding:20px;font-family:'Orbitron',sans-serif;}
+.sb-jd-modal{position:relative;background:linear-gradient(180deg,rgb(30,30,30) 0%,rgb(23,23,23) 100%);border-radius:4px;padding:20px;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;flex:1 1 auto;min-height:0;display:flex;flex-direction:column;overflow:hidden;}
+/* Buttons, the modal's own title, and the Hz/Mn unit suffixes next to the
+   digital-font numbers all sit inside .sb-jd-modal and would otherwise
+   inherit the Montserrat above — restored to Orbitron here since none of
+   these are the "field label/value" content the Montserrat switch above is
+   actually for. */
+.sb-jd-modal button{font-family:'Orbitron',sans-serif;}
+.sb-jd-modal .sb-knob-unit{font-family:'Orbitron',sans-serif;}
+/* Scrollable inner region — everything below the pinned close-button/title
+   row lives in here now, so overscroll bounce is contained to this content
+   area rather than dragging the whole card (which now stays put, 4px from
+   the elements above/below per the overlay's own padding) along with it. */
+.sb-jd-modal-body{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 /* Title stays a bit bigger than the field labels below it (matches the
    comp — "EDIT JOURNEY INFO" is clearly larger than "JOURNEY CATEGORY"
    there), just smaller than my first pass. Field labels themselves come
    down further still, and are given a tighter gap to their own box. */
-.sb-jd-hd .sb-home-section-hd{font-size:13px;letter-spacing:0.06em;}
-.sb-jd-modal .sb-field .sb-home-section-hd{font-size:10px;margin-bottom:4px;}
+.sb-jd-hd .sb-home-section-hd{font-size:13px;letter-spacing:0.06em;font-family:'Orbitron',sans-serif;}
+.sb-jd-modal .sb-field .sb-home-section-hd{font-size:10px;margin-bottom:4px;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;letter-spacing:normal;}
 .sb-jd-modal .sb-home-section-hd{font-weight:400;}
 .sb-jd-modal .sb-field{margin-bottom:20px;}
 .sb-jd-modal .sb-field:last-child{margin-bottom:0;}
@@ -795,7 +813,7 @@ overflow:visible;}
    (Wave Frequency / Stage Music rows only, per spec) sitting between the
    label and the value, and the label itself switched to match this
    modal's own field-label style instead of the old screen's. */
-.sb-jd-modal .sb-stepper-info .sb-home-section-hd{font-size:10px;margin-bottom:2px;}
+.sb-jd-modal .sb-stepper-info .sb-home-section-hd{font-size:10px;margin-bottom:2px;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;letter-spacing:normal;}
 .sb-jd-modal .sb-steppers{margin:0;gap:18px;}
 .sb-jd-modal .sb-stepper-num{font-size:18px;width:46px;}
 /* Grid instead of flex here: Carrier Frequency/Stage Length have no knob
@@ -850,12 +868,10 @@ overflow:visible;}
    many rows are actually in the list — without this, a short list (few
    Custom Music remixes) let the card shrink to fit its content, exposing
    the Edit Stage modal underneath through the gap below it. */
-#sb-choosemusic-modal-overlay .sb-jd-modal{height:420px;display:flex;flex-direction:column;}
 #sb-choosemusic-modal-overlay .sb-jd-hd{flex-shrink:0;}
-#sb-choosemusic-modal-overlay .lib-music-subtabs{flex-shrink:0;margin:0 0 10px;border-radius:4px;}
-#sbcm-list{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+#sb-choosemusic-modal-overlay .lib-music-subtabs{flex-shrink:0;margin:0 0 10px;border-radius:4px;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;}
 .sbcm-row.sbcm-selected{border:1px solid var(--accent,#a78bfa);}
-.sbcm-play-btn{position:absolute;top:9.9px;right:5.5px;width:23px;height:23px;border:1px solid #757575;border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-sizing:border-box;color:#fff;}
+.sbcm-play-btn{position:absolute;top:9.9px;right:5.5px;width:23px;height:23px;border:1px solid #757575;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-sizing:border-box;color:#fff;}
 .sbcm-play-btn svg{width:9px;height:9px;}
 .sbcm-play-btn.sb-preview-playing{border-color:var(--accent,#a78bfa);color:var(--accent,#a78bfa);}
 .sb-stepper-num{font-family:'PW Digital Numbers',monospace;font-size:26px;font-weight:400;color:#fff;text-align:right;background:transparent;border:none;outline:none;width:64px;padding:0;}
@@ -894,7 +910,7 @@ overflow:visible;}
 /* Shared top-of-tab title — same type style as Studio's "STUDIO" heading
    (.sb-title), reused on Journeys/Library so all three tabs read as one
    consistent header language. */
-.page-title{font-size:12px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:700;padding:0 22px;margin-bottom:18px;}
+.page-title{font-size:12px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:400;padding:0 22px;margin-bottom:18px;font-family:'Orbitron',sans-serif;}
 #jtab-scroll-area{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;}
 .jtab-section-label{padding:0 22px;margin:0 0 10px;}
 /* .jtab-featured-row was dead CSS -- the real element uses .jtab-frow2 (fixed above) */
@@ -946,28 +962,28 @@ overflow:visible;}
    these new "2" classes are additive and only referenced by the new
    renderJourneysTab()/renderFeaturedRow()/renderPlateList() below.
    ══════════════════════════════════════════════════════════════════════ */
-.jtab-section-label2{font-size:12px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:700;padding:16px 12px 10px;}
+.jtab-section-label2{font-size:12px;letter-spacing:4px;color:#fff;text-transform:uppercase;font-weight:400;padding:16px 12px 10px;font-family:'Orbitron',sans-serif;}
 /* James's feedback: "Journeys" itself goes 2pt larger and centered above
    the bar — scoped to this tab specifically so Library's own page-title
    (same shared class) is untouched. */
 #jtab-fixed-header .page-title{font-size:14px;text-align:center;}
 /* Work Order 011G: Library header now matches the Journeys header exactly. */
 #lib-fixed-header .page-title{font-size:14px;text-align:center;}
-.jtab-catbar2{width:100%;height:26px;background:linear-gradient(180deg,#2F2F2F 0%,#1E1E1E 100%);display:flex;align-items:center;justify-content:space-between;padding:0 12px;overflow-x:auto;font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:0.1em;font-weight:400;box-sizing:border-box;}
+.jtab-catbar2{width:100%;height:26px;background:linear-gradient(180deg,rgba(47,47,47,0.7) 0%,rgba(30,30,30,0.7) 100%);display:flex;align-items:center;justify-content:space-between;padding:0 12px;overflow-x:auto;font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:0.1em;font-weight:400;box-sizing:border-box;}
 .jtab-catbar2::-webkit-scrollbar{display:none;}
 .jtab-catbar2-item{color:#6f6f6f;white-space:nowrap;cursor:pointer;padding:4px 0;background:none;border:none;font-family:inherit;font-size:inherit;letter-spacing:inherit;}
-.jtab-catbar2-item.active{color:#fff;font-weight:700;}
+.jtab-catbar2-item.active{color:#fff;font-weight:400;}
 
 /* Feature Card */
 .jtab-frow2{display:flex;gap:4px;padding:0 4px;overflow-x:auto;}
 .jtab-frow2::-webkit-scrollbar{display:none;}
-.jtab-fcard2{position:relative;width:181px;height:108px;min-width:181px;background:linear-gradient(180deg,rgba(47,47,47,0.9) 0%,rgba(30,30,30,0.9) 100%);border-radius:4px;padding:10px;flex-shrink:0;cursor:pointer;box-sizing:border-box;transition:width 0.22s ease, min-width 0.22s ease;}
+.jtab-fcard2{position:relative;width:155px;height:108px;min-width:155px;background:linear-gradient(180deg, color-mix(in srgb, var(--accent,#a78bfa) 20%, transparent) 0%, color-mix(in srgb, var(--accent,#a78bfa) 6%, transparent) 100%);border-radius:20px;padding:10px;flex-shrink:0;cursor:pointer;box-sizing:border-box;transition:width 0.22s ease, min-width 0.22s ease;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
 .jtab-fcard2.quick{width:230px;min-width:230px;}
 .jtab-fcard2-icon{position:absolute;top:3px;left:10px;width:30.9px;height:30.9px;}
-.jtab-fcard2-kebab{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border:1px solid #757575;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
+.jtab-fcard2-kebab{position:absolute;top:5.5px;right:5.5px;width:23px;height:23px;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
 .jtab-fcard2-kebab div{width:3px;height:3px;border-radius:50%;background:#bdbdbd;}
-.jtab-fcard2-body{display:flex;flex-direction:column;height:100%;font-family:'Orbitron',sans-serif;}
-.jtab-fcard2-name{font-size:10.2px;font-weight:400;letter-spacing:0.1em;margin-top:28px;line-height:1.35;flex-shrink:0;color:rgba(255,255,255,0.9);}
+.jtab-fcard2-body{display:flex;flex-direction:column;height:100%;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;}
+.jtab-fcard2-name{font-size:11.2px;font-weight:400;letter-spacing:0.1em;margin-top:28px;line-height:1.35;flex-shrink:0;color:rgba(255,255,255,0.9);}
 .jtab-fcard2-bottom-row{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:6px;}
 .jtab-fcard2-footer{font-size:9px;letter-spacing:0.1em;line-height:1.5;}
 /* Work Order 011V: "Custom Journey" corner badge for user-made journeys —
@@ -1004,21 +1020,21 @@ overflow:visible;}
    they're kept inert instead by simply not attaching click/kebab listeners
    to them at all while in move mode (see renderLibraryGrid). */
 .jtab-fcard2.lib-move-dimmed, .jtab-prow2.lib-move-dimmed{opacity:0.6;transition:opacity .2s ease;}
-.jtab-fcard2.lib-move-active, .jtab-prow2.lib-move-active{outline:1.5px solid rgba(255,255,255,0.5);outline-offset:-1.5px;cursor:grab;}
+.jtab-fcard2.lib-move-active, .jtab-prow2.lib-move-active{outline:1.5px solid rgba(255,255,255,0.5);outline-offset:-1.5px;cursor:grab;touch-action:none;}
 .jtab-fcard2.lib-card-dragging, .jtab-prow2.lib-card-dragging{cursor:grabbing;box-shadow:0 10px 28px rgba(0,0,0,0.55);opacity:0.96;}
 .lib-move-icon{background:rgba(255,255,255,0.08);}
 
 /* Journey Card (Browse Journeys) */
 .jtab-plist2{padding:0;}
-.jtab-prow2{width:100%;min-height:42.76px;background:linear-gradient(180deg,rgba(47,47,47,0.9) 0%,rgba(30,30,30,0.9) 100%);border-radius:4px;position:relative;margin-bottom:4px;padding:0 44px 0 40px;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;box-sizing:border-box;font-family:'Orbitron',sans-serif;transition:min-height 0.2s ease;overflow:hidden;}
+.jtab-prow2{width:100%;min-height:42.76px;background:linear-gradient(180deg,rgba(46,46,46,0.5) 0%,rgba(0,0,0,0.5) 100%);border-radius:4px;position:relative;margin-bottom:4px;padding:0 44px 0 40px;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-start;box-sizing:border-box;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;transition:min-height 0.2s ease;overflow:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;}
 .jtab-prow2.quick{min-height:78px;padding-bottom:10px;}
 .jtab-prow2-line1{display:flex;align-items:center;height:42.76px;flex-shrink:0;}
 .jtab-prow2-icon{width:23px;height:23px;position:absolute;left:8.5px;top:9.9px;}
 .jtab-prow2-name{font-size:9.7px;font-weight:400;letter-spacing:0.1em;flex-shrink:1;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:rgba(255,255,255,0.9);}
 .jtab-prow2-meta{margin-left:auto;flex-shrink:0;font-size:9px;letter-spacing:0.08em;color:#9a9a9a;text-align:right;line-height:1.4;padding-right:8px;white-space:nowrap;}
-.jtab-prow2-desc{display:none;font-size:9.5px;font-weight:600;letter-spacing:0.05em;line-height:1.4;padding-right:4px;}
+.jtab-prow2-desc{display:none;font-size:9.5px;font-weight:400;letter-spacing:0.05em;line-height:1.4;padding-right:4px;}
 .jtab-prow2.quick .jtab-prow2-desc{display:block;}
-.jtab-prow2-kebab{position:absolute;top:9.9px;right:5.5px;width:23px;height:23px;border:1px solid #757575;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
+.jtab-prow2-kebab{position:absolute;top:9.9px;right:5.5px;width:23px;height:23px;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
 .jtab-prow2-kebab div{width:3px;height:3px;border-radius:50%;background:#bdbdbd;}
 
 /* ── LIBRARY TAB ─────────────────────────────────────────────────────── */
@@ -1119,10 +1135,10 @@ overflow:visible;}
    old .lib-card-wrap.lib-expanded/.lib-card shared classes entirely rather
    than fighting their photo-card sizing assumptions with overrides. */
 #uinfo-overlay{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.65);z-index:80;display:none;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;}
-#uinfo-card{position:relative;width:332px;max-width:100%;max-height:92vh;background:linear-gradient(180deg,rgba(30,30,30,0.9) 0%,rgba(23,23,23,0.9) 100%);border-radius:6px;border:1px solid var(--uinfo-accent,#a78bfa);padding:18px 16px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'Orbitron',sans-serif;}
-#uinfo-kebab{position:absolute;top:12px;right:46px;width:26px;height:26px;border:1px solid #757575;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
+#uinfo-card{position:relative;width:332px;max-width:100%;max-height:92vh;background:linear-gradient(180deg,rgba(30,30,30,0.9) 0%,rgba(23,23,23,0.9) 100%);border-radius:6px;border:1px solid var(--uinfo-accent,#a78bfa);padding:18px 16px;box-sizing:border-box;overflow-y:auto;-webkit-overflow-scrolling:touch;font-family:'Montserrat',-apple-system,'Helvetica Neue',sans-serif;}
+#uinfo-kebab{position:absolute;top:12px;right:46px;width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;gap:2.5px;cursor:pointer;box-sizing:border-box;}
 #uinfo-kebab div{width:3px;height:3px;border-radius:50%;background:#bdbdbd;}
-#uinfo-close-btn{position:absolute;top:12px;right:12px;width:26px;height:26px;border:1px solid #fff;border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:11px;font-family:Arial,sans-serif;box-sizing:border-box;}
+#uinfo-close-btn{position:absolute;top:12px;right:12px;width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;font-size:11px;font-family:Arial,sans-serif;box-sizing:border-box;}
 #uinfo-icon{width:30.9px;height:30.9px;display:block;margin-bottom:8px;margin-top:-8.45px;}
 /* Work Order 011R: music-icon stand-in for song entries in the same info
    card — same slot/size as #uinfo-icon, just swapped for a fixed icon
@@ -1130,17 +1146,17 @@ overflow:visible;}
 #uinfo-music-icon{width:30.9px;height:30.9px;margin-bottom:8px;margin-top:-8.45px;align-items:center;justify-content:center;}
 #uinfo-music-icon svg{width:100%;height:100%;}
 /* moved up 8.45px so it's vertically centered on #uinfo-kebab (top:12px, 26px tall, center=25) */
-#uinfo-name{font-size:16px;font-weight:400;letter-spacing:0.1em;text-align:center;color:rgba(255,255,255,0.9);margin:4px 0 16px;}
-#uinfo-headline{font-size:12px;font-weight:600;letter-spacing:0.2em;line-height:1.6;color:var(--uinfo-accent,#a78bfa);margin-bottom:14px;}
-#uinfo-summary{font-size:10.5px;color:#9a9a9a;letter-spacing:0.2em;line-height:1.7;margin-bottom:14px;}
-.uinfo-stage-row{font-size:10.5px;letter-spacing:0.2em;line-height:1.9;color:#9a9a9a;}
-.uinfo-stage-row.cur{font-weight:700;color:var(--uinfo-accent,#a78bfa);}
-.uinfo-footer-row{font-size:10.5px;letter-spacing:0.2em;line-height:1.9;color:#6b6b6b;margin-top:10px;}
+#uinfo-name{font-size:16px;font-weight:400;letter-spacing:0.1em;text-align:center;color:rgba(255,255,255,0.9);margin:4px 0 16px;font-family:'Orbitron',sans-serif;}
+#uinfo-headline{font-size:12px;font-weight:400;letter-spacing:normal;line-height:1.6;color:var(--uinfo-accent,#a78bfa);margin-bottom:14px;}
+#uinfo-summary{font-size:10.5px;color:#9a9a9a;letter-spacing:normal;line-height:1.7;margin-bottom:14px;}
+.uinfo-stage-row{font-size:10.5px;letter-spacing:normal;line-height:1.9;color:#9a9a9a;}
+.uinfo-stage-row.cur{font-weight:400;color:var(--uinfo-accent,#a78bfa);}
+.uinfo-footer-row{font-size:10.5px;letter-spacing:normal;line-height:1.9;color:#6b6b6b;margin-top:10px;}
 /* Work Order 011T: "Used In" journey list on Music Info Cards — 2 columns,
    each journey name colored by its own category accent. */
-.uinfo-usedin-label{font-size:10.5px;letter-spacing:0.2em;line-height:1.9;color:#9a9a9a;margin-top:10px;text-transform:uppercase;}
+.uinfo-usedin-label{font-size:10.5px;letter-spacing:normal;line-height:1.9;color:#9a9a9a;margin-top:10px;text-transform:uppercase;}
 .uinfo-usedin-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;margin-top:2px;}
-.uinfo-usedin-item{font-size:10px;letter-spacing:0.1em;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.uinfo-usedin-item{font-size:10px;letter-spacing:normal;line-height:1.7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #lib-confirm-overlay{position:fixed;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.65);z-index:90;display:none;align-items:center;justify-content:center;}
 #lib-confirm-box{width:280px;background:rgba(21,21,28,0.9);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:20px;text-align:center;}
 #lib-confirm-box p{color:#fff;font-size:13px;line-height:1.5;margin:0 0 16px;}
@@ -1157,7 +1173,7 @@ overflow:visible;}
 #guide-overlay{position:absolute;left:0;top:0;right:0;bottom:0;background:#07070c;z-index:200;display:flex;flex-direction:column;transform:translateX(-100%);transition:transform 0.32s cubic-bezier(.4,0,.2,1);}
 #guide-overlay.guide-open{transform:translateX(0);}
 #guide-header{flex:0 0 auto;display:flex;align-items:center;gap:14px;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 14px;border-bottom:1px solid rgba(255,255,255,0.07);}
-#guide-header .guide-close{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;color:rgba(255,255,255,0.8);font-size:15px;line-height:1;}
+#guide-header .guide-close{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;color:rgba(255,255,255,0.8);font-size:15px;line-height:1;}
 #guide-header .guide-title{font-size:16px;font-weight:600;color:#fff;letter-spacing:0.02em;}
 #guide-subnav{flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.05);}
 #guide-subnav .guide-pill{padding:16px 10px;border-radius:12px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;text-align:center;white-space:normal;line-height:1.3;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);color:rgba(255,255,255,0.55);cursor:pointer;display:flex;align-items:center;justify-content:center;}
@@ -1712,6 +1728,7 @@ overflow:visible;}
               <div class="sb-home-section-hd" style="margin-bottom:0;">Edit Journey Info</div>
               <button class="sb-je-btn-sm" id="sb-jd-modal-save-btn">Save</button>
             </div>
+            <div class="sb-jd-modal-body">
             <div class="sb-field">
               <div class="sb-home-section-hd">Journey Category</div>
               <div class="sb-select-wrap">
@@ -1741,6 +1758,7 @@ overflow:visible;}
               </div>
               <textarea class="sb-input sb-textarea sb-textarea-desc" id="sb-journey-desc" maxlength="500" placeholder="Enter Description Text"></textarea>
             </div>
+            </div>
           </div>
         </div>
 
@@ -1757,6 +1775,7 @@ overflow:visible;}
               <div class="sb-home-section-hd" id="sbm-title" style="margin-bottom:0;">Edit Stage 1</div>
               <button class="sb-je-btn-sm" id="sbm-save-btn">Save</button>
             </div>
+            <div class="sb-jd-modal-body">
             <div class="sb-field">
               <div class="sb-home-section-hd">Stage Name</div>
               <input class="sb-input" id="sbm-stage-name" type="text" maxlength="40" placeholder="Enter Name">
@@ -1807,6 +1826,7 @@ overflow:visible;}
                 <button class="sb-je-btn-sm" id="sbm-music-edit-btn">Edit</button>
               </div>
             </div>
+            </div>
           </div>
         </div>
 
@@ -1835,8 +1855,10 @@ overflow:visible;}
                 <button class="sb-je-btn-sm" id="sbmm-save-btn">Save</button>
               </div>
             </div>
+            <div class="sb-jd-modal-body">
             <div class="sbmm-basemusic">Base Music: <span id="sbmm-basemusic-name" class="sbmm-basemusic-val">None</span></div>
             <div id="sbmm-mixtray-body"></div>
+            </div>
           </div>
         </div>
 
@@ -1862,7 +1884,7 @@ overflow:visible;}
               <div class="lib-music-subtab-item active" data-cm-subtab="custom">Custom Music</div>
               <div class="lib-music-subtab-item" data-cm-subtab="default">Default Music</div>
             </div>
-            <div id="sbcm-list"></div>
+            <div id="sbcm-list" class="sb-jd-modal-body"></div>
           </div>
         </div>
       </div>
@@ -8849,14 +8871,49 @@ document.querySelectorAll('.cat-btn').forEach(function(btn){
   });
 });
 
-// Work Order 011B: Explore/Signal now default to the real, fully-built
-// waypoint journeys (Threshold/Overture) instead of the simple placeholder
-// JOURNEYS.explore/other objects — played the same way Featured/Library
-// cards already do, via playLibraryEntry (handles waypoint ticking, real
-// audio config, etc. automatically). Focus/Calm/Dream/Sleep unchanged.
+// ── DAILY QUICK-START ROTATION ──────────────────────────────────────────
+// Each of the 6 category buttons now plays a real multi-stage journey from
+// the catalog, chosen at random from that category's own multi-stage
+// entries — but seeded by today's date, so the pick stays fixed all day
+// (same journey every time the app is opened today) and only changes
+// tomorrow. Pure client-side date math, recomputed fresh on every load —
+// no server, no stored "today's picks" needed to make this work.
+//
+// Session tab's own category keys (calm/focus/dream/explore/sleep/other)
+// don't quite match the catalog's own category field (calm/focus/mind/
+// explore/sleep/other) — only 'dream' differs, mapped to 'mind' here.
+var QS_CATEGORY_TO_LIBRARY_CATEGORY = { calm:'calm', focus:'focus', dream:'mind', explore:'explore', sleep:'sleep', other:'other' };
+// Simple string hash -> deterministic non-negative int, so the same
+// (date, category) pair always yields the same index into that category's
+// pool without needing any persisted state — just recomputed from the
+// date string itself every time.
+function sbQsHashSeed(str){
+  var h = 0;
+  for (var i = 0; i < str.length; i++) { h = ((h << 5) - h + str.charCodeAt(i)) | 0; }
+  return Math.abs(h);
+}
+var QS_DAILY_PICKS = {};
+var QS_DAILY_PICKS_DATE = null;
+function sbGetDailyLibraryPick(cat){
+  var today = new Date().toDateString();
+  if (QS_DAILY_PICKS_DATE !== today) { QS_DAILY_PICKS = {}; QS_DAILY_PICKS_DATE = today; }
+  if (QS_DAILY_PICKS[cat]) return QS_DAILY_PICKS[cat];
+  var libCat = QS_CATEGORY_TO_LIBRARY_CATEGORY[cat] || cat;
+  // sourceGroup !== 'studio' excludes user-authored/forked journeys —
+  // only the shipped default catalog is eligible for the daily rotation.
+  var pool = JOURNEY_LIBRARY.filter(function(j){ return j.category === libCat && j.multiStage && j.sourceGroup !== 'studio'; });
+  if (!pool.length) return null; // nothing to rotate yet for this category — caller falls back
+  var idx = sbQsHashSeed(today + '|' + cat) % pool.length;
+  QS_DAILY_PICKS[cat] = pool[idx].id;
+  return QS_DAILY_PICKS[cat];
+}
+// Explore/Signal's own previous fixed picks (Threshold/Overture) now serve
+// only as the fallback for a category with no multi-stage catalog entries
+// yet — every category currently has at least one, so this mainly matters
+// if the catalog is ever pruned back down.
 var QS_LIBRARY_DEFAULT = { explore: 'threshold_journey', other: 'overture_journey' };
 function beginSelectedSession(){
-  var libId = QS_LIBRARY_DEFAULT[sel];
+  var libId = sbGetDailyLibraryPick(sel) || QS_LIBRARY_DEFAULT[sel];
   if (libId && JOURNEY_LIBRARY_BY_ID[libId]) { playLibraryEntry(libId); return; }
   activeLibEntry=JOURNEYS[sel];
   startAudio(sel); enterPlaying(sel);
@@ -9074,6 +9131,20 @@ function playLibraryEntry(entryId) {
   if (journeysPanel) journeysPanel.style.display='none';
   if (studio) studio.style.display='none';
   if (libraryPanel) libraryPanel.style.display='none';
+  // Each of those three panels has its own starfield background sibling
+  // that isn't tied to the panel's own display state automatically (see
+  // _syncStarBgs in the real nav-click handler) — without hiding these
+  // too, the previous tab's starfield stayed layered on top of the
+  // Sessions content this just switched to, making it look like a blank
+  // screen until manually tapping the Sessions nav item (which does call
+  // _syncStarBgs) fixed it.
+  var journeysBg = document.getElementById('journeys-star-bg');
+  var libraryBg = document.getElementById('library-star-bg');
+  var studioBg = document.getElementById('studio-star-bg');
+  if (journeysBg) journeysBg.style.display = 'none';
+  if (libraryBg) libraryBg.style.display = 'none';
+  if (studioBg) studioBg.style.display = 'none';
+  closeUnifiedInfoModal();
   _setActiveNav('qs');
 }
 
@@ -9451,6 +9522,7 @@ function renderLibraryGrid() {
     var dateLine = (isOwnEntry && libMeta && libMeta.lastEdited) ? ('Last Edited: ' + libMeta.lastEdited) : 'Created: July 1, 2026';
     var card = document.createElement('div');
     card.className = 'jtab-fcard2';
+    card.style.setProperty('--accent', accent);
     card.setAttribute('data-jtab-quick-id', e.id);
 
     // Work Order 011H: "Move" mode — the card being moved gets the drag
@@ -10399,6 +10471,7 @@ function renderFeaturedRow() {
     var desc = e.headline || jtabFeelSummary(e);
     var card = document.createElement('div');
     card.className = 'jtab-fcard2';
+    card.style.setProperty('--accent', accent);
     card.setAttribute('data-jtab-quick-id', e.id);
     card.innerHTML =
       '<img class="jtab-fcard2-icon" src="' + jtabIconV2(e.category) + '">' +
@@ -10527,10 +10600,19 @@ function jtabWireQuickPress(el){
       // A completed long-press always fires a click right on release too
       // (the browser has no idea how long the press was) — this flag lets
       // the card/row's own click handler recognize and swallow that one
-      // click, so expanding/collapsing Quick Info doesn't also immediately
-      // trigger play-on-tap right after.
+      // click, so opening Info doesn't also immediately trigger
+      // play-on-tap right after.
       el._jtabSuppressClick = true;
-      jtabToggleQuick(el);
+      // Long-press now opens the same full Info modal the kebab menu's own
+      // "Info" option opens, rather than the old inline "quick expand"
+      // (abandoned — it was fiddly on touch devices and let the browser's
+      // native text-selection kick in mid-press). Reading id/type off the
+      // element's own kebab button means this works correctly wherever
+      // it's wired, without needing to hardcode a type per call site.
+      var kebabBtn = el.querySelector('[data-kebab-toggle]');
+      if (kebabBtn) {
+        openUnifiedInfoModal(kebabBtn.getAttribute('data-kebab-id'), kebabBtn.getAttribute('data-kebab-type'));
+      }
     }, 420);
   };
   var cancel = function(){ clearTimeout(timer); };
